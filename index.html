@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Libro</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header-logo {
+            width: 500px;
+            margin: 20px auto;
+        }
+        .navbar {
+            background-color: #2c3e50;
+        }
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ecf0f1;
+        }
+        .section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            color: #d35400;
+            border-bottom: 1px solid #d35400;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .section p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        .img-fluid {
+            border-radius: 8px;
+        }
+        .contact-form {
+            margin-bottom: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .contact-form .btn {
+            background-color: #d35400;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        .contact-info {
+            color: #34495e;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .contact-info .fa {
+            margin-right: 10px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+	 /* Responsive Design Enhancements */
+        @media (max-width: 768px) {
+            .section {
+                padding: 20px;
+            }
+            .contact-form .btn {
+                width: auto;
+            }
+        }
+        @media (max-width: 576px) {
+            .header-logo {
+                width: 100%;
+                max-width: 300px;
+            }
+            .navbar-nav {
+                text-align: center;
+            }
+            .navbar-nav .nav-link {
+                padding: 10px 0;
+            }
+            .contact-info p {
+                font-size: 0.9em;
+            }
+        }
+		
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <img src="Images\true-libro-logo.png" alt="True Libro Logo" class="header-logo img-fluid">
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#home">True Libro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#business">Business Mantra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#wealth">Wealth Mantra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <section id="home" class="section">
+            <h2>Who are we</h2>
+            <p>At <strong>TRUE LIBRO</strong> — we have been providing high-quality tax, accounting & financial advisory services to individuals and small to medium businesses in various industries. We also offer business consultancy services to help our clients grow and succeed.</p>
+            <h3>Our Team</h3>
+            <p>At the core of our services is a dedicated panel of professionals, including Chartered Accountants, Company Secretaries, Senior Advocates, Professional Accountants, and Expert Insurance Advisors. Together, they ensure that every service we provide is marked by precision, accountability, and expertise.</p>
+            <h3>Our Mantras</h3>
+            <ul>
+                <li><strong>Business Mantra</strong> - A dependable, expert and high-standard accounting service solution</li>
+                <li><strong>Wealth Mantra</strong> - Expert guidance on personal finance and wealth management, helping individuals secure and grow their financial future.</li>
+            </ul>
+        </section>
+        <section id="business" class="section">
+            <h2>Business Mantra</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>GST Registration & Compliance</h3>
+                    <img src="Images\GST.png" alt="GST" class="img-fluid">
+                    <p>Comprehensive GST registration and compliance solutions to ensure your business adheres to all regulations.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Company Registration & Compliance</h3>
+                    <img src="Images\company reg.jpg" alt="Company Registration" class="img-fluid">
+                    <p>We provide comprehensive assistance with company registration and ongoing compliance obligations, making it easy for you to navigate the legal requirements and focus on you business operations.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Taxation</h3>
+                    <img src="Images\TAX.png" alt="Taxation" class="img-fluid">
+                    <p>Taxation service provides expert assistance with tax planning and compliance, helping individuals and business navigate the complexities of tax laws and regulations.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Accouting & Bookkeeping </h3>
+                    <img src="Images\Accounting.jpg" alt="Accouting & Bookkeeping " class="img-fluid">
+                    <p>We offers accurate and dependable accounting and bookkeepping services to ensure your business records are always up to date.
+Note: As per legal requirements, it is mandatory to maintain your books of accounts for a minimum of 7 years.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>FSSAI</h3>
+                    <img src="Images\FSSAI.png" alt="FSSAI" class="img-fluid">
+                    <p>The Food Safety and Standards Authority of India (FSSAI) is responsible for regulating food safety in India.
+Business in the food industry must register or obtain a license with FSSAI based on their size and turnover.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>MSME-Udyog Aadhar</h3>
+                    <img src="Images\msme.jpg" alt="MSME-Udyog Aadhar" class="img-fluid">
+                    <p>SME registration helps businesses give recognition, legal benefits and access to government schemes. Compliance ensures that the business operates within the legal framework, avoids penalties and enjoy the benefits of beng a registered entity.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Import & Export Licence</h3>
+                    <img src="Images\IEC.jpg" alt="Import & Export Licence" class="img-fluid">
+                    <p>The Import Export Code (IEC) is a crucial registration for business that wish to engage in international trade. It provides credebility, enables smoother cross border transactions and grant access to government schemes aimed at boosting export activities.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Trade Mark</h3>
+                    <img src="Images\TM.jpg" alt="Trade Mark" class="img-fluid">
+                    <p>Trademark service provide businesses with a means to protect their brand identity and differentiate themselves in the marketplace. Registration a trademark is essential for safegaurding intellectual property, maintaining brand value and ensuring long term legal protection.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Other Services</h3>
+                    <img src="Images\other-services.png" alt="Other Services" class="img-fluid">
+                    <p>Digital signature, PAN card, E-way bills, CMA reports, GeM registration, Letter of Undeertaking (LUT) File, Registration Under Shop & Establishment Act, Project Reports & many more in Buckets.</p>
+                </div>
+            </div>
+        </section>
+        <section id="wealth" class="section">
+            <h2>Wealth Mantra</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Protection Plans</h3>
+                    <img src="Images\Protection.jpg" alt="Protection Plans" class="img-fluid">
+                    <p>We offer flexible Protection Plans that are tailored to meet your specific needs and budget.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Wealth Creation Plans</h3>
+                    <img src="Images\wealth.jpg" alt="Wealth Creation Plans" class="img-fluid">
+                    <p>Expert guidance on personal finance and wealth management, helping individuals secure and grow their financial future.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Saving Plans</h3>
+                    <img src="Images\saving.jpg" alt="Saving Plans" class="img-fluid">
+                    <p>Saving Plans empower you to make informed decisions about your savings, ensuring a secure and prosperous future.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Child Plans</h3>
+                    <img src="Images\child.jpg" alt="Child Plans" class="img-fluid">
+                    <p>Invest in your child's dreams and aspirations with your tailored child plans.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Retirement Plans</h3>
+                    <img src="Images\retirement.jpg" alt="Retirement Plans" class="img-fluid">
+                    <p>Take control of your future with our comprehensive retirement planning services.</p>
+                </div>
+				<div class="col-md-6">
+                    <h3>Health Insurance</h3>
+                    <img src="Images\health.jpg" alt="Health Insurance" class="img-fluid">
+                    <p>Our health insurance service provides comprehensive coverage for medical expenses, ensuring you and your family receive the care you need.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="contact-form">
+                <form id="contactForm" action="#" method="post">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email address">
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Message"></textarea>
+                    <button type="submit" class="btn">CONTACT US</button>
+                </form>
+            </div>
+            <div class="contact-info text-center">
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i>Khorabar Urf Soobabazar, Uttar Pradesh, India<br>
+                Near Dayanand Inter college, Deoria Road, Gorakhpur-273010</p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i>+91-8318435728 - OWNER</p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i>truelibroca@gmail.com</p>
+                <p><i class="fa fa-clock-o" aria-hidden="true"></i>Mon-Sat - 10 AM-8 PM<br>
+                Sun - 11 AM-5 PM</p>
+            </div>
+
+            <!-- Modal for Email and WhatsApp -->
+            <div class="modal fade" id="contactChoiceModal" tabindex="-1" role="dialog" aria-labelledby="contactChoiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactChoiceModalLabel">Choose Contact Method</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <a href="#" id="emailLink" class="btn btn-primary mr-2"><i class="fa fa-envelope"></i> Email</a>
+                            <a href="#" id="whatsappLink" class="btn btn-success"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>© 2025 True Libro. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Collect form data
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+        
+        // Construct email and WhatsApp URLs
+        var emailURL = "mailto:truelibroca@gmail.com?subject=Contact%20from%20True%20Libro&body=Name:%20" + encodeURIComponent(name) + "%0D%0APhone:%20" + encodeURIComponent(phone) + "%0D%0AEmail:%20" + encodeURIComponent(email) + "%0D%0AMessage:%20" + encodeURIComponent(message);
+        var whatsappURL = "https://wa.me/918318435728?text=Name:%20" + encodeURIComponent(name) + "%0APhone:%20" + encodeURIComponent(phone) + "%0AEmail:%20" + encodeURIComponent(email) + "%0AMessage:%20" + encodeURIComponent(message);
+        
+        // Update modal links with form data
+        document.getElementById('emailLink').href = emailURL;
+        document.getElementById('whatsappLink').href = whatsappURL;
+        
+        // Show the modal
+        $('#contactChoiceModal').modal('show');
+    });
+    </script>
+</body>
+</html>
