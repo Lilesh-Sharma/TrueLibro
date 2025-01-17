@@ -116,17 +116,35 @@
 			max-height: 300px; /* Adjust height as needed */
 			object-fit: fill;
 		}
+		/* Overlay Text Styling */
 		.video-overlay {
 			position: absolute;
-			top: 60%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: orange; /* Set the text color */
-			font-size: 1.9rem; /* Adjust font size */
+			top: 60%; /* Vertical Centering */
+			left: 50%; /* Horizontal Centering */
+			transform: translate(-50%, -50%); /* Center the text perfectly */
+			color: orange; /* Text Color */
+			font-size: 2rem; /* Default Font Size */
 			font-weight: bold;
 			text-align: center;
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
-			z-index: 1; /* Ensure text appears above the video */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+			padding: 0 10px; /* Add padding for better readability on small screens */
+			z-index: 1;
+			width: 100%; /* Allow text to wrap for smaller devices */
+			max-width: 80%; /* Restrict text width for better alignment */
+			box-sizing: border-box;
+		}
+
+		/* Responsive Design for Text Size */
+		@media (max-width: 768px) {
+			.video-overlay {
+				font-size: 1.5rem; /* Adjust font size for tablets */
+			}
+		}
+
+		@media (max-width: 576px) {
+			.video-overlay {
+				font-size: 1.2rem; /* Adjust font size for mobile devices */
+			}
 		}
 		
     </style>
