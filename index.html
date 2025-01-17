@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>True Libro</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -110,6 +110,24 @@
                 font-size: 0.9em;
             }
         }
+		.video-container video {
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			max-height: 300px; /* Adjust height as needed */
+			object-fit: fill;
+		}
+		.video-overlay {
+			position: absolute;
+			top: 60%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: orange; /* Set the text color */
+			font-size: 1.9rem; /* Adjust font size */
+			font-weight: bold;
+			text-align: center;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+			z-index: 1; /* Ensure text appears above the video */
+		}
 		
     </style>
 </head>
@@ -139,6 +157,16 @@
             </ul>
         </div>
     </nav>
+	<!-- Video Below Navigation -->
+    <div class="video-container text-center my-3">
+        <video autoplay muted loop width="100%">
+            <source src="Images\chart.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+		<div class="video-overlay">
+        Your Trusted Partner in Finance, Tax Compliance, and Wealth Creation
+		</div>
+    </div>
     <div class="container">
         <section id="home" class="section">
             <h2>Who are we</h2>
@@ -153,6 +181,12 @@
         </section>
         <section id="business" class="section">
             <h2>Business Mantra</h2>
+			<div class="video-container text-center mt-4">
+                <video autoplay muted loop width="100%">
+                    <source src="Images\business.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <h3>GST Registration & Compliance</h3>
@@ -205,6 +239,12 @@ Business in the food industry must register or obtain a license with FSSAI based
         </section>
         <section id="wealth" class="section">
             <h2>Wealth Mantra</h2>
+			<div class="video-container text-center mt-4">
+                <video autoplay muted loop width="100%">
+                    <source src="Images\wealth.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <h3>Protection Plans</h3>
