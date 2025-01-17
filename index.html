@@ -122,23 +122,60 @@
 			max-height: 300px; /* Adjust height as needed */
 			object-fit: fill;
 		}
-		/* Overlay Text Styling */
+		/* Video Container */
+		.video-container {
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			height: auto; /* Ensures height adjusts to content */
+		}
+
+		/* Video Wrapper */
+		.video-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%; /* Ensure the height is consistent */
+			display: flex; /* Enable alignment */
+			align-items: center; /* Vertically align the text */
+			justify-content: center; /* Horizontally align the text */
+		}
+
+		/* Video */
+		.video-wrapper video {
+			width: 100%;
+			height: auto;
+			object-fit: cover; /* Ensures video covers the area consistently */
+			z-index: 0; /* Send video to the background */
+		}
+
+		/* Overlay Text */
 		.video-overlay {
 			position: absolute;
-			top: 60%; /* Vertical Centering */
-			left: 50%; /* Horizontal Centering */
-			transform: translate(-50%, -50%); /* Center the text perfectly */
-			color: orange; /* Text Color */
-			font-size: 2rem; /* Default Font Size */
+			color: orange; /* Text color */
+			font-size: 2rem; /* Default text size */
 			font-weight: bold;
 			text-align: center;
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
-			padding: 0 10px; /* Add padding for better readability on small screens */
-			z-index: 1;
-			width: 100%; /* Allow text to wrap for smaller devices */
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improve readability */
+			z-index: 1; /* Place text above the video */
+			width: 100%; /* Ensure text spans full width */
 			max-width: 80%; /* Restrict text width for better alignment */
+			padding: 0 20px; /* Prevent text from touching the edges */
 			box-sizing: border-box;
 		}
+
+/* Responsive Text Adjustments */
+@media (max-width: 768px) {
+    .video-overlay {
+        font-size: 1.5rem; /* Text size for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .video-overlay {
+        font-size: 1.2rem; /* Text size for mobile devices */
+        line-height: 1.4; /* Adjust spacing between text lines */
+    }
+}
 
 		/* Responsive Design for Text Size */
 		@media (max-width: 768px) {
@@ -182,15 +219,17 @@
         </div>
     </nav>
 	<!-- Video Below Navigation -->
-    <div class="video-container text-center my-3">
-        <video autoplay muted loop width="100%">
-            <source src="Images\chart.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-		<div class="video-overlay">
-        Your Trusted Partner in Finance, Tax Compliance, and Wealth Creation
+	<div class="video-container text-center my-3">
+		<div class="video-wrapper">
+			<video autoplay muted loop>
+				<source src="Images\chart.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+			<div class="video-overlay">
+				Your Trusted Partner in Finance, Tax Compliance, and Wealth Creation
+			</div>
 		</div>
-    </div>
+	</div>
     <div class="container">
         <section id="home" class="section">
             <h2>Who are we</h2>
