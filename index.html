@@ -163,19 +163,19 @@
 			box-sizing: border-box;
 		}
 
-/* Responsive Text Adjustments */
-@media (max-width: 768px) {
-    .video-overlay {
-        font-size: 1.5rem; /* Text size for tablets */
-    }
-}
+		/* Responsive Text Adjustments */
+		@media (max-width: 768px) {
+			.video-overlay {
+				font-size: 1.5rem; /* Text size for tablets */
+			}
+		}
 
-@media (max-width: 576px) {
-    .video-overlay {
-        font-size: 1.2rem; /* Text size for mobile devices */
-        line-height: 1.4; /* Adjust spacing between text lines */
-    }
-}
+		@media (max-width: 576px) {
+			.video-overlay {
+				font-size: 1.2rem; /* Text size for mobile devices */
+				line-height: 1.4; /* Adjust spacing between text lines */
+			}
+		}
 
 		/* Responsive Design for Text Size */
 		@media (max-width: 768px) {
@@ -189,6 +189,27 @@
 				font-size: 1.2rem; /* Adjust font size for mobile devices */
 			}
 		}
+		
+		.image-container {
+            width: 36px; /* Match text size */
+            height: 36px; /* Match text size */
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+		.text {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            color: #FF6600;
+            margin-bottom: 20px;
+        }
 		
     </style>
 </head>
@@ -207,10 +228,10 @@
                     <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#business">Business Mantra</a>
+                    <a class="nav-link" href="#business">Business Guardian </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#wealth">Wealth Mantra</a>
+                    <a class="nav-link" href="#wealth">Wealth Guardian </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
@@ -236,14 +257,20 @@
             <p>At <strong>TRUE LIBRO</strong> — We have been providing high-quality tax, accounting & financial advisory services to individuals and small to medium businesses in various industries. We also offer business consultancy services to help our clients grow and succeed.</p>
             <h3>Our Team</h3>
             <p>At the core of our services is a dedicated panel of professionals, including Chartered Accountants, Company Secretaries, Senior Advocates, Professional Accountants, and Expert Insurance Advisors. Together, they ensure that every service we provide is marked by precision, accountability, and expertise.</p>
-            <h3>Our Mantras</h3>
+                <h3 class="text">
+					True-Guardian
+					<div class="image-container">
+						<img src="Images\guardian.jpg" alt="Knight Shield">
+					</div>
+				</h3>
             <ul>
-                <li><strong>Business Mantra</strong> - A dependable, expert and high-standard accounting service solution</li>
-                <li><strong>Wealth Mantra</strong> - Expert guidance on personal finance and wealth management, helping individuals secure and grow their financial future.</li>
+                <li><strong>Business Guardian </strong> - A dependable, expert and high-standard accounting service solution</li>
+                <li><strong>Wealth Guardian </strong> - Expert guidance on personal finance and wealth management, helping individuals secure and grow their financial future.</li>
             </ul>
+			
         </section>
         <section id="business" class="section">
-            <h2>Business Mantra</h2>
+            <h2>Business Guardian </h2>
 			<div class="video-container text-center mt-4">
                 <video autoplay muted loop width="100%">
                     <source src="Images\business.mp4" type="video/mp4">
@@ -301,7 +328,7 @@ Business in the food industry must register or obtain a license with FSSAI based
             </div>
         </section>
         <section id="wealth" class="section">
-            <h2>Wealth Mantra</h2>
+            <h2>Wealth Guardian </h2>
 			<div class="video-container text-center mt-4">
                 <video autoplay muted loop width="100%">
                     <source src="Images\wealth.mp4" type="video/mp4">
@@ -344,6 +371,11 @@ Business in the food industry must register or obtain a license with FSSAI based
                     <img src="Images\Vehicle.png" alt="Vehicle Insurance" class="img-fluid">
                     <p>Vehicle insurance offers financial protection against accidents, theft, and liabilities, with options for add-ons and cashless repairs. Get insurance quotations up to 35% off with True Libro's expert guidance to select the best coverage.</p>
                 </div>
+				<div class="col-md-6">
+                    <h3>Loan Services</h3>
+                    <img src="Images\loan.jpg" alt="Loan Services" class="img-fluid">
+                    <p>Empower Your Future with Smart Finance Solutions. True LIBRO bridges the gap between you and financial institutions, securing funds for your home, business, personal, and credit card needs.</p>
+                </div>
             </div>
         </section>
         <section id="contact" class="section">
@@ -360,7 +392,7 @@ Business in the food industry must register or obtain a license with FSSAI based
             <div class="contact-info text-center">
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i>Khorabar Urf Soobabazar, Uttar Pradesh, India<br>
                 Near Dayanand Inter college, Deoria Road, Gorakhpur-273010</p>
-                <p><i class="fa fa-phone" aria-hidden="true"></i>+91-8318435728 - OWNER</p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i>+91-8318435728</p>
                 <p><i class="fa fa-envelope" aria-hidden="true"></i>truelibroca@gmail.com</p>
                 <p><i class="fa fa-clock-o" aria-hidden="true"></i>Mon-Sat - 10 AM-8 PM<br>
                 Sun - 11 AM-5 PM</p>
