@@ -536,6 +536,10 @@
 	[data-aos].aos-animate {
 		pointer-events: auto;
 	}
+	
+	body.modal-open {
+    overflow: auto !important;
+	}
     </style>
 	 <!-- ... existing head content ... -->
     
@@ -829,7 +833,7 @@ Business in the food industry must register or obtain a license with FSSAI based
                     <i class="fa fa-envelope"></i> Send Email
                 </button>
                 <button onclick="sendWhatsApp()" class="btn btn-success">
-                    <i class="fa fa-whatsapp"></i> Send WhatsApp
+                    <i class="fab fa-whatsapp"></i> Send WhatsApp
                 </button>
             </div>
         </div>
@@ -845,7 +849,6 @@ Business in the food industry must register or obtain a license with FSSAI based
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <script>
@@ -877,6 +880,7 @@ function handleContactSubmit() {
     modal.style.display = 'block';
     modal.classList.add('show');
     document.body.classList.add('modal-open');
+    
 }
 
 function sendEmail() {
@@ -932,6 +936,10 @@ window.addEventListener('click', function(event) {
 document.getElementById('phone').addEventListener('input', function(e) {
     // Remove non-numeric characters
     this.value = this.value.replace(/[^0-9+]/g, '');
+});
+
+$('#contactChoiceModal').on('shown.bs.modal', function () {
+  document.body.classList.remove('modal-open');
 });
 </script>
 	<script>
