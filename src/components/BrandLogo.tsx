@@ -38,7 +38,7 @@ export default function BrandLogo({ className = '', showTagline = false, isLight
           </span>
         </div>
         {showTagline && (
-          <span className={`text-[10px] sm:text-xs font-semibold tracking-wider uppercase ${isLight ? 'text-slate-300' : 'text-slate-500'}`}>
+          <span className={`text-[10px] sm:text-xs font-semibold tracking-wider uppercase ${isLight ? 'text-slate-400' : 'text-slate-500'}`}>
             Finance • Tax • Wealth
           </span>
         )}
@@ -46,3 +46,4 @@ export default function BrandLogo({ className = '', showTagline = false, isLight
     </div>
   );
 }
+

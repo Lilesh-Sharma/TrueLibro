@@ -16,7 +16,6 @@ export interface CertificationItem {
   level: string;
   recipient: string;
   issueDate: string;
-  validity?: string;
   signatory?: string;
   description: string;
   certNumber?: string;

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import InternationalSupport from './components/InternationalSupport';
+import MeetFounder from './components/MeetFounder';
 import ServicesSection from './components/ServicesSection';
 import TechStack from './components/TechStack';
 import Certificates from './components/Certificates';
@@ -36,19 +37,22 @@ export default function App() {
         {/* 2. Global Offshore & Australian Accounting Practice Support */}
         <InternationalSupport onOpenConsultation={() => handleOpenConsultation('Australian Practice Support')} />
 
-        {/* 3. Comprehensive Services: Business Guardian & Wealth Guardian */}
+        {/* 3. Meet the Founder & Leadership */}
+        <MeetFounder onOpenConsultation={() => handleOpenConsultation('Founder Discussion & Practice Onboarding')} />
+
+        {/* 4. Comprehensive Services: Business Guardian & Wealth Guardian */}
         <ServicesSection onOpenConsultationWithService={(svc) => handleOpenConsultation(svc)} />
 
-        {/* 4. Accounting Technology & Workflow Ecosystem */}
+        {/* 5. Accounting Technology & Workflow Ecosystem */}
         <TechStack onOpenConsultation={() => handleOpenConsultation('Software Migration & Tech Integration')} />
 
-        {/* 5. Verified Certifications & Professional Standards */}
+        {/* 6. Verified Certifications & Professional Standards */}
         <Certificates />
 
-        {/* 6. Why Us, 5-Step Partnership Process & Who We Support */}
+        {/* 7. Why Us, 5-Step Partnership Process & Who We Support */}
         <WhyUsAndProcess />
 
-        {/* 7. Contact Details, Direct Message Form & FAQ Accordion */}
+        {/* 8. Contact Details, Direct Message Form & FAQ Accordion */}
         <ContactSection />
       </main>
 

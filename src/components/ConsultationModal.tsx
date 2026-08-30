@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { BUSINESS_INFO } from '../data/content';
-import { X, Send, CheckCircle2, Phone, Mail, MessageSquare } from 'lucide-react';
+import { X, Send, CheckCircle2, Mail, MessageSquare, RotateCcw } from 'lucide-react';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -19,8 +19,32 @@ export default function ConsultationModal({ isOpen, onClose, defaultService = ''
 
   if (!isOpen) return null;
 
+  const generateMailtoLink = () => {
+    const subject = encodeURIComponent(`Consultation Request: ${service} - ${name.trim() || 'Client Inquiry'}`);
+    const body = encodeURIComponent(
+      `Hello TrueLibro Team,\n\n` +
+      `I would like to request a consultation / service with the following details:\n\n` +
+      `• Full Name: ${name.trim()}\n` +
+      `• Email Address: ${email.trim()}\n` +
+      `• Phone / WhatsApp: ${phone.trim() || 'Not provided'}\n` +
+      `• Service of Interest: ${service}\n` +
+      `• Accounting Software: ${software}\n\n` +
+      `Message / Requirements:\n` +
+      `${message.trim() || 'Please contact me to discuss accounting support.'}\n\n` +
+      `---\n` +
+      `Sent via TrueLibro Consultation Portal`
+    );
+    return `mailto:${BUSINESS_INFO.contact.email}?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const mailtoUrl = generateMailtoLink();
+    
+    // Automatically trigger user's default email client
+    window.location.href = mailtoUrl;
+    
+    // Switch to Thank You state
     setIsSubmitted(true);
   };
 
@@ -38,31 +62,15 @@ export default function ConsultationModal({ isOpen, onClose, defaultService = ''
     return `https://wa.me/${BUSINESS_INFO.contact.whatsapp}?text=${text}`;
   };
 
-  const generateMailtoLink = () => {
-    const subject = encodeURIComponent(`Inquiry for ${service} - TrueLibro`);
-    const body = encodeURIComponent(`Hello TrueLibro Team,
-
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Service of Interest: ${service}
-Accounting Software: ${software}
-
-Message / Requirements:
-${message}
-`);
-    return `mailto:${BUSINESS_INFO.contact.email}?subject=${subject}&body=${body}`;
-  };
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-xl bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 overflow-hidden"
+        className="relative w-full max-w-xl bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 overflow-hidden transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
@@ -71,7 +79,7 @@ ${message}
         {!isSubmitted ? (
           <div>
             <div className="mb-6">
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 uppercase tracking-wider">
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-200 uppercase tracking-wider">
                 Direct Engagement Request
               </span>
               <h3 className="text-2xl font-black text-slate-900 mt-2">
@@ -92,7 +100,7 @@ ${message}
                     placeholder="e.g. John Smith"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
                   />
                 </div>
 
@@ -104,7 +112,7 @@ ${message}
                     placeholder="e.g. john@practice.com.au"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
                   />
                 </div>
               </div>
@@ -117,7 +125,7 @@ ${message}
                     placeholder="+61 ... or +91 ..."
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
                   />
                 </div>
 
@@ -126,7 +134,7 @@ ${message}
                   <select
                     value={software}
                     onChange={(e) => setSoftware(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm bg-white"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
                   >
                     <option value="Xero">Xero</option>
                     <option value="QuickBooks Online">QuickBooks Online</option>
@@ -143,7 +151,7 @@ ${message}
                 <select
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm bg-white"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm"
                 >
                   <option value="Australian Bookkeeping Support">Australian Bookkeeping Support</option>
                   <option value="Xero / QBO Offshore Team">Xero / QBO Offshore Team</option>
@@ -163,24 +171,24 @@ ${message}
                   placeholder="Tell us about your clients, workload, or required assistance..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm resize-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm resize-none"
                 />
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                  className="flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Submit Inquiry</span>
+                  <span>Send Message & Open Email</span>
                 </button>
 
                 <a
                   href={generateWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+                  className="py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>WhatsApp Instantly</span>
@@ -189,32 +197,65 @@ ${message}
             </form>
           </div>
         ) : (
-          <div className="text-center py-6 space-y-4">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+          <div className="text-center py-6 space-y-5 animate-in fade-in zoom-in-95 duration-200">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200 shadow-xs">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
-            <h3 className="text-2xl font-bold text-slate-900">
-              Thank You, {name || 'Valued Client'}!
-            </h3>
+            <div>
+              <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                Email Opened & Draft Prepared
+              </span>
+              <h3 className="text-2xl font-black text-slate-900 mt-2">
+                Thank You, {name || 'Valued Client'}!
+              </h3>
+              <p className="text-sm text-slate-600 max-w-md mx-auto mt-1 leading-relaxed">
+                Your consultation request for <strong>{service}</strong> has been opened in your email application. Once sent, our team will review your requirements and respond promptly within 24 business hours.
+              </p>
+            </div>
 
-            <p className="text-sm text-slate-600 max-w-md mx-auto">
-              Your inquiry for <strong>{service}</strong> has been received by TrueLibro. Our panel will get back to you within 24 business hours.
-            </p>
+            {/* Inquiry Summary Box */}
+            <div className="text-left bg-slate-50 border border-slate-200 rounded-2xl p-4 text-xs space-y-2 max-w-md mx-auto shadow-xs">
+              <div className="font-bold text-slate-800 border-b border-slate-200 pb-1.5 flex justify-between items-center">
+                <span>Inquiry Details</span>
+                <span className="text-[11px] font-semibold text-rose-600">{software}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-slate-700">
+                <div><strong className="text-slate-900">Name:</strong> {name}</div>
+                <div><strong className="text-slate-900">Email:</strong> {email}</div>
+                {phone && <div><strong className="text-slate-900">Phone:</strong> {phone}</div>}
+                <div><strong className="text-slate-900">Service:</strong> {service}</div>
+              </div>
+              {message && (
+                <div className="pt-1.5 text-slate-600 border-t border-slate-200">
+                  <strong className="text-slate-800">Message:</strong> {message}
+                </div>
+              )}
+            </div>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <a
                 href={generateMailtoLink()}
-                className="px-5 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 flex items-center gap-2"
+                className="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-sm flex items-center gap-2 transition-colors cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
-                <span>Open in Email App</span>
+                <span>Re-open Email App</span>
+              </a>
+
+              <a
+                href={generateWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm flex items-center gap-2 transition-colors cursor-pointer"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp Us</span>
               </a>
 
               <button
                 type="button"
                 onClick={resetForm}
-                className="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold hover:bg-slate-200"
+                className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors cursor-pointer border border-slate-200"
               >
                 Close Window
               </button>
