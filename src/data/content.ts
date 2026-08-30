@@ -34,6 +34,22 @@ export const HERO_STATS: StatItem[] = [
   { value: 35, prefix: 'Up to ', suffix: '%', label: 'Insurance Savings', sublabel: 'Optimized policy premium rates' },
 ];
 
+export const FOUNDER_INFO = {
+  name: 'Santosh Kumar Thakur',
+  title: 'Founder & Accounting Professional | Australian Bookkeeping & BAS Specialist',
+  belief: 'Building TrueLibro with a simple belief: accounting should be accurate, organised, transparent and genuinely useful to business owners.',
+  bioParagraph1: 'Santosh Kumar Thakur is an accounting professional with 10+ years of overall experience in accounting, taxation and financial processes, including 4.5+ years of experience providing bookkeeping and accounting support to Australian accounting firms and businesses.',
+  bioParagraph2: 'Through his professional journey, he has worked extensively with Australian accounting workflows, reviewing 100+ bookkeeping files for BAS lodgements, managing client accounts, performing quality-control reviews, resolving accounting discrepancies and supporting efficient bookkeeping processes.',
+  bioParagraph3: 'His experience goes beyond bookkeeping, with a strong foundation in accounting, taxation, audit, financial data review, workflow management and team training.',
+  image: '/santosh_thakur.jpg',
+  highlights: [
+    { label: '10+ Years', desc: 'Accounting & Taxation Experience' },
+    { label: '4.5+ Years', desc: 'Dedicated Australian Practice Support' },
+    { label: '100+ Files', desc: 'BAS Lodgement & Quality Reviews' },
+    { label: 'Multi-Certified', desc: 'Xero & QuickBooks ProAdvisor' },
+  ],
+};
+
 export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
     id: 'qbo-l2',
@@ -42,7 +58,6 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     level: 'Level 2 - ProAdvisor Advanced',
     recipient: 'Santosh Thakur',
     issueDate: '08 June 2022',
-    validity: '1 October 2025',
     signatory: 'Michael O’Sullivan (Customer Training Manager)',
     description: 'Certified expertise in complex reconciliations, multi-currency reporting, advanced chart of accounts, and custom management reports in Intuit QuickBooks.',
   },
@@ -63,7 +78,6 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     level: 'Level 2 - Certified Professional',
     recipient: 'Santosh Thakur',
     issueDate: '30/09/2025',
-    validity: '24/09/2026',
     signatory: 'Vikki Bean (GM - Education & Content Delivery, Xero)',
     description: 'Comprehensive Xero mastery covering month-end reviews, payroll integrations, fixed asset registers, and Australian BAS reconciliation.',
   },
@@ -74,7 +88,6 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     level: 'Level 1 - Certified Associate',
     recipient: 'Santosh Thakur',
     issueDate: '30/09/2025',
-    validity: '24/09/2026',
     signatory: 'Vikki Bean (GM - Education & Content Delivery, Xero)',
     description: 'Core Xero competencies including bank feeds, sales invoices, bills matching, and standard ledger reconciliations.',
   },
