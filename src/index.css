@@ -1,10 +1,15 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
   html {
     scroll-behavior: smooth;
     background-color: #f8fafc;
     color: #1e293b;
+    color-scheme: light;
   }
 
   body {
@@ -12,6 +17,7 @@
     -webkit-font-smoothing: antialiased;
     background-color: #f8fafc;
     color: #1e293b;
+    color-scheme: light;
   }
 
   h1, h2, h3, h4, h5, h6 {
